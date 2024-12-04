@@ -1,0 +1,6 @@
+:root {
+    font-family: "Nunito", sans-serif;
+    --tamanho-celula: 150px;
+    --tamanho-borda-celula: 1px;
+    overflow-x: hidden;
+}

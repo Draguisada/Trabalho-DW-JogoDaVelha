@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Jersey+10+Charted&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/animacoes.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cores/padrao.css">
 
@@ -20,7 +21,13 @@
     </menu>
 
     <ui>
-        <h1>Vez de jogar de <strong>X</strong></h1>
+        <h1>Vez de jogar de <strong class="playerIdent"></strong></h1>
+
+        <div id="status">
+            <h1><strong class="playerIdent"></strong> Ganhou!</h1>
+            <input type="button" value="Re-jogar"><input type="button" value="Menu">
+        </div>
+        
     </ui>
 
     <jogo-da-velha id="normal">

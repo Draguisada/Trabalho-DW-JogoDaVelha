@@ -10,7 +10,10 @@ const verJogar = document.getElementsByClassName('playerIdent');
 const jogoNormal = document.getElementById('normal');
 const finalStatus = document.getElementById('status');
 const gameStatus = document.querySelector('#status h1');
+const linhaGanhar = document.getElementById('linhaGanhar');
+const rejogarJogo = document.getElementById('replay');
 
+rejogarJogo.addEventListener('click', replay);
 
 // Funções globais
 function getJogo(string) {
@@ -29,6 +32,7 @@ function getJogo(string) {
 
 function clearBoard(string) {
     let jogo = getJogo(string);
+    round = 0;
 
     let crionca = jogo.children;
     for (i=0;  i<crionca.length  ;i++) {
@@ -36,47 +40,51 @@ function clearBoard(string) {
     }
 }
 
-function checkWin(string) {
-    if (round<5) {
-        return false;
-    }
-    let jogo = getJogo(string);
-    let crionca = jogo.children;
+function barToggle(qual, toggle) {
+    if (qual == 'status'){
+    
+        if (toggle) {
+            finalStatus.style.display = 'flex';
+            return;
+        } 
+        finalStatus.style.display= 'none';
 
-    if (crionca[0].textContent == crionca[8].textContent && crionca[0].textContent == crionca[4].textContent && crionca[0].textContent != '') {
-        return true;
     }
+    else if (qual == 'linha'){
 
-    if (crionca[2].textContent == crionca[4].textContent && crionca[2].textContent == crionca[6].textContent && crionca[2].textContent != '') {
-        return true;
-    }
-
-    for (let i=0; i<3; i++) {
-    for (let j=0; j<3; j++) {
-        if (crionca[j].textContent == crionca[j+3].textContent && crionca[j+3].textContent == crionca[j+6].textContent && crionca[j].textContent != '') {
-            return true;
-        }   
-    }
-        if (crionca[i*3].textContent == crionca[(i*3)+1].textContent && crionca[(i*3)+1].textContent == crionca[(i*3)+2].textContent && crionca[(i*3)].textContent != '') {
-            return true;    
+        if (toggle) {
+            linhaGanhar.style.display = 'flex';
+            return;
         }
+        linhaGanhar.style.display= 'none';
     }
-}
-
-function statusBarToggle(toggle) {
-    if (toggle) {
-        finalStatus.style.display = 'flex';
-        return;
-    }
-    finalStatus.style.display= 'none';
-
 }
 
 function drawGame() {
-    statusBarToggle(true);
+    barToggle('status',true);
     gameStatus.textContent = 'Empatou!'
 }
 
 function winGame() {
-    statusBarToggle(true);
+    barToggle('status', true);
+    barToggle('linha', true)
+    
+}
+
+function calcLinha(x1, y1, x2, y2, mult=1) {
+    barToggle('linha', true);
+    linhaGanhar.style.rotate = `0deg`;
+    if (x1 == x2) {
+        return 0;
+    }
+    result = (Math.atan((x2-x1)/(y2-y1))*180/Math.PI)*mult;
+    linhaGanhar.style.rotate = `${result}deg`;
+    
+    return result;
+}
+
+function replay() {
+    barToggle('status', false);
+    barToggle('linha', false);
+    clearBoard('normal');
 }

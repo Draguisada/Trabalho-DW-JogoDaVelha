@@ -10,7 +10,7 @@ const verJogar = document.getElementsByClassName('playerIdent');
 const jogoNormal = document.getElementById('normal');
 const finalStatus = document.getElementById('status');
 const gameStatus = document.querySelector('#status h1');
-const linhaGanhar = document.getElementById('linhaGanhar');
+const linha = document.getElementById('linhaGanhar');
 const rejogarJogo = document.getElementById('replay');
 
 rejogarJogo.addEventListener('click', replay);
@@ -53,10 +53,10 @@ function barToggle(qual, toggle) {
     else if (qual == 'linha'){
 
         if (toggle) {
-            linhaGanhar.style.display = 'flex';
+            linha.style.display = 'flex';
             return;
         }
-        linhaGanhar.style.display= 'none';
+        linha.style.display= 'none';
     }
 }
 
@@ -71,17 +71,7 @@ function winGame() {
     
 }
 
-function calcLinha(x1, y1, x2, y2, mult=1) {
-    barToggle('linha', true);
-    linhaGanhar.style.rotate = `0deg`;
-    if (x1 == x2) {
-        return 0;
-    }
-    result = (Math.atan((x2-x1)/(y2-y1))*180/Math.PI)*mult;
-    linhaGanhar.style.rotate = `${result}deg`;
-    
-    return result;
-}
+
 
 function replay() {
     barToggle('status', false);

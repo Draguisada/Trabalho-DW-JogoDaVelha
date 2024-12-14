@@ -93,7 +93,7 @@ ui h1 {
     row-gap: 20px;
 
     position: absolute;
-    top: 50%;
+    top: 85%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
@@ -128,6 +128,9 @@ ui h1 {
     position: absolute;
     
     z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     align-self: center;
     justify-self: center;

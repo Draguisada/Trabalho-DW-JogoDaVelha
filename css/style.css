@@ -121,11 +121,12 @@ ui h1 {
 }
 
 
-#linhaGanhar {
+.linhaGanhar {
     height: calc(var(--tamanho-celula)/2);
-    width: calc(var(--tamanho-celula)*3);
+    /* width: calc(var(--tamanho-celula)*3); */
     background-color: var(--cor-linha-ganhar);
     position: absolute;
+    display: block;
     
     z-index: 2;
     top: 50%;

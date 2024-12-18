@@ -6,11 +6,17 @@ let jogador = [1, 'X', 'O', '#f00', '#00f'];
 let celula;
 let round = 0;
 
+linhaGanhar = new Linha();  
+
 const verJogar = document.getElementsByClassName('playerIdent');
+
+
 const jogoNormal = document.getElementById('normal');
+const jogoTriangular = document.getElementById('triangular');
+
 const finalStatus = document.getElementById('status');
 const gameStatus = document.querySelector('#status h1');
-const linha = document.getElementById('linhaGanhar');
+// const linha = document.geteE('linhaGanhar');
 const rejogarJogo = document.getElementById('replay');
 
 rejogarJogo.addEventListener('click', replay);
@@ -40,41 +46,27 @@ function clearBoard(string) {
     }
 }
 
-function barToggle(qual, toggle) {
-    if (qual == 'status'){
-    
+function statusToggle(toggle) {
         if (toggle) {
             finalStatus.style.display = 'flex';
             return;
         } 
         finalStatus.style.display= 'none';
-
-    }
-    else if (qual == 'linha'){
-
-        if (toggle) {
-            linha.style.display = 'flex';
-            return;
-        }
-        linha.style.display= 'none';
-    }
 }
 
 function drawGame() {
-    barToggle('status',true);
+    statusToggle(true);
     gameStatus.textContent = 'Empatou!'
 }
 
 function winGame() {
-    barToggle('status', true);
-    barToggle('linha', true)
-    
+    statusToggle(true);
 }
 
 
 
 function replay() {
-    barToggle('status', false);
-    barToggle('linha', false);
+    statusToggle(false);
+    linhaGanhar.toggle(false);
     clearBoard('normal');
 }

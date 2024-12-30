@@ -4,5 +4,6 @@
     --first-player-color: #0af;
     --second-player-color: #f10;
     --cor-botao: #0a6e96;
+    --cor-botao-selecionado: #084c74;
     --cor-linha-ganhar: rgba(0, 255, 34, 0.8);
 }

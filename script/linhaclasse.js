@@ -1,5 +1,3 @@
-
-
 class Linha {
 
     constructor(objeto1=0, objeto2=0) {

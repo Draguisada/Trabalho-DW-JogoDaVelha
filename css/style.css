@@ -64,8 +64,6 @@ jogo h1 {
 }
 
 
-
-
 ui {
     text-align: center;
     font-size: 24px;
@@ -74,6 +72,7 @@ ui {
     width: 100%;
     height: 100%;
 }
+
 
 ui h1 {
     width: 100%;
@@ -100,6 +99,7 @@ ui h1 {
     font-size: 24px;
 }
 
+
 #status input[type=button] {
     width: 40%;
     height: fit-content;
@@ -114,10 +114,8 @@ ui h1 {
 }
 
 #status input[type=button]:hover {
-    animation-name: endOfIndieGameButton;
-    animation-duration: 5s;
-    animation-iteration-count:infinite;
-    animation-timing-function: ease-in-out;
+    background-color: var(--cor-botao-selecionado);
+    box-shadow: -5px 5px var(--cor-botao);
 }
 
 
@@ -132,6 +130,7 @@ ui h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 10px;
 
     align-self: center;
     justify-self: center;

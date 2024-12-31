@@ -14,21 +14,37 @@
     <script src="script/linhaclasse.js" defer></script>
     <script src="script/main.js" defer></script>
     <script src="script/jogos/normal.js" defer></script>
-    <!-- <script src="script/linha.js" defer></script> -->
+    <script src="script/menu.js" defer></script>
 
 
 </head>
 <body>
-    <!-- <menu>
+    <menu>
         <h1>Bem-vindo(a) ao Jogo da velha!</h1>
-    </menu> -->
+        <input type="button" value="Jogar!" id="iniciar-jogo">
+        <config>
+            <h1>Jogadores</h1><br> 
+            <div>
+                <input type="color" name="jogador1cor" id="jogador1C" value="#ff0000">
+                <input type="text" name="jogador1nome" id="jogador1N" value="X" maxlength="3" placeholder="X">
+                
+    
+                <input type="text" name="jogador1nome" id="jogador2N" value="O" maxlength="3" placeholder="X">
+                <input type="color" name="jogador1cor" id="jogador2C" value="#0000ff">
+            </div>
+        </config>
+        <p>Feito por: Bruno Tochetto e Bruna Donati.</p>
+
+        
+    </menu>
 
     <ui>
         <h1>Vez de jogar de <strong class="playerIdent"></strong></h1>
 
         <div id="status">
             <h1><strong class="playerIdent"></strong> Ganhou!</h1>
-            <input type="button" value="Re-jogar" id="replay"><input type="button" value="Menu">
+            <input type="button" value="Re-jogar" id="replay">
+            <input type="button" value="Menu" id='ir-menu'>
         </div>
 
 

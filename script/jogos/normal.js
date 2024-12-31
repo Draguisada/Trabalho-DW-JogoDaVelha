@@ -20,7 +20,6 @@ function checkWin(string) {
         return false; 
     }
 
-    let jogo = getJogo(string);
     let crionca = jogo.children;
 
     if (crionca[0].textContent == crionca[8].textContent && crionca[0].textContent == crionca[4].textContent && crionca[0].textContent != '') {

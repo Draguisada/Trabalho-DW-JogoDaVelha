@@ -29,6 +29,7 @@ jogo h1 {
     align-items: center;
     justify-content: center;
     border: var(--tamanho-borda-celula) solid transparent;
+    cursor: pointer;
 }
 
 
